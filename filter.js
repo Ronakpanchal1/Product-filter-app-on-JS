@@ -32,8 +32,18 @@ searchInput.addEventListener("keyup",(e)=>{
         displayedProducts(data.filter((item)=>{
             return item.title.toLowerCase().indexOf(value) !== -1
         }))
-    }else{
+    }
+    else{
         displayedProducts(data)
+    }
+
+    if( !productsContainer.innerHTML){
+      productsContainer.style.background = "#f7f3f3"
+      productsContainer.style.height = "100vh"
+      productsContainer.style.display = "flex"
+      productsContainer.style.alignItems = "center"
+      productsContainer.style.justifyContent = "center"
+      productsContainer.innerHTML = `<h1>No such product found</h1>`
     }
 })
 
